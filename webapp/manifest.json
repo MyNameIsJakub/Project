@@ -1,0 +1,124 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "Project.Decidalo",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "Project.Decidalo.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "root"
+		},
+		"dependencies": {
+			"minUI5Version": "1.60.1",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "Project.Decidalo.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "Project.Decidalo.view",
+				"controlAggregation": "pages",
+				"controlId": "root",
+				"clearControlAggregation": false,
+				"viewLevel": 1,
+				"bypassed": {
+					"target": []
+				}
+			},
+			"routes": [{
+				"name": "Home",
+				"pattern": "",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["Home"]
+			}, {
+				"name": "loggedIn",
+				"pattern": "namespace/{text}",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["loggedIn"]
+			}, {
+				"name": "Tool1",
+				"pattern": "Tool1",
+				"target": ["Tool1"]
+			}],
+			"targets": {
+				"Home": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": true,
+					"viewName": "Home",
+					"title": "Home",
+					"viewLevel": 1
+				},
+				"loggedIn": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": true,
+					"viewName": "loggedIn",
+					"viewLevel": 2
+				},
+				"loginApp": {
+					"viewType": "XML",
+					"viewName": "loginApp"
+				},
+				"Tool1": {
+					"viewType": "XML",
+					"viewName": "Tool1",
+					"clearControlAggregation": true
+				}
+			}
+		}
+	}
+}

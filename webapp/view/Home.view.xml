@@ -1,0 +1,25 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="Project.Decidalo.controller.Home" displayBlock="true">
+	<Shell>
+		<Page showSubHeader="false" title="App Title">
+			<content>
+				
+			<VBox width="30%" direction="Column" id="vbox0">
+				
+			    <items>
+				
+			        <Input xmlns="sap.m" id="input0" placeholder="E-Mail" value="{/loginData/eMail}"/>
+				
+			        <Input xmlns="sap.m" id="input1" placeholder="Passwort" type="Password" value="{/loginData/password}"/>
+				
+			        <Button xmlns="sap.m" text="Login" id="button0" width="100%" press="onLoginButtonPress"/>
+				
+			        <CheckBox xmlns="sap.m" text="Remember Me?" selected="false" id="box0" width="100%"/>
+				
+			    </items>
+				
+			</VBox>
+				
+			</content>
+		</Page>
+	</Shell>
+</mvc:View>
